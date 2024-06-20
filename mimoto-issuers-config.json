@@ -332,7 +332,7 @@
       "credential_issuer": "HealthCoverageZ",
       "display": [
         {
-          "name": "HealthCoverageZ Verifiable Credential",
+          "name": "HealthCoverageZ Verifiable Credential(Certify)",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a HealthCoverageZ"
@@ -352,7 +352,7 @@
         "VerifiableCredential",
         "InsuranceCredential"
       ],
-      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
+      ".well-known": "https://${mosip.injicertify.insurance.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
@@ -364,7 +364,7 @@
       "credential_issuer": "ProtectionPlus+",
       "display": [
         {
-          "name": "ProtectionPlus+ Verifiable Credential",
+          "name": "ProtectionPlus+ Verifiable Credential(Certify)",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a Sunbird"
@@ -383,10 +383,9 @@
       "additional_headers": {
         "Accept": "application/json"
       },
-      "credentials_supported": [
-        {
+      "credential_configurations_supported": {
+        "VehicleInsuranceCredential": {
           "format": "ldp_vc",
-          "id": "VehicleInsuranceCredential",
           "scope": "vehicle_insurance_vc_ldp",
           "credential_definition": {
             "type": [
@@ -395,18 +394,19 @@
             ]
           }
         }
-      ],
+      },
       "credential_type": [
         "VerifiableCredential",
         "InsuranceCredential"
       ],
+      ".well-known": "https://${mosip.injicertify.insurance.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/ProtectionPlus+",
       "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
-      "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
-      "credential_audience": "https://${mosip.esignet.insurance.host}",
+      "credential_endpoint": "https://${mosip.injicertify.insurance.host}/v1/certify/issuance/vd11/credential",
+      "credential_audience": "https://${mosip.injicertify.insurance.host}",
       "enabled": "true"
     },
     {
@@ -519,7 +519,7 @@
       "additional_headers": {
         "Accept": "application/json"
       },
-      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
